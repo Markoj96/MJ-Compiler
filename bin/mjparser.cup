@@ -1,0 +1,199 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+
+// import java.io.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+	boolean errorDetected = false;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {     
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);        
+        log.error(msg.toString());
+    }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.info(msg.toString());
+    } 
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROGRAM;
+terminal CONST, ENUM;
+terminal String IDENT;
+terminal Integer numConst;
+terminal String charConst;
+terminal Boolean boolConst;
+terminal SEMI_COLON,COMMA, DOT;
+terminal NEW, VOID; 
+terminal INCREMENT, DECREMENT;
+terminal READ, PRINT;
+terminal EQUAL, ADD, SUB, MUL, DIV, MOD;
+terminal LEFT_PAREN, RIGHT_PAREN;
+terminal LEFT_BRACKET, RIGHT_BRACKET;
+terminal LEFT_BRACE, RIGHT_BRACE;
+
+terminal CLASS, INTERFACE, EXTENDS, RETURN, FOR, BREAK, CONTINUE, IF, ELSE;
+terminal GREATER_OR_EQUAL, LOWER_OR_EQUAL, GREATER, LOWER, NOT_EQUAL, AND, OR;
+
+nonterminal GlobalDeclarationList, GlobalDeclaration;
+nonterminal ConstantDeclaration, ConstantDeclarationList;
+nonterminal MethodDeclarationList;
+nonterminal EnumDeclarationList;
+nonterminal VariableDeclaration, VariableDeclarationList;
+nonterminal StatementList;
+nonterminal DesignatorStatement;
+nonterminal Assignop;
+nonterminal Addop;
+nonterminal Mulop;
+nonterminal ActParsOptional, ActPars, ActParsList, ActParsDefinition;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramStart;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstantDefinition, ConstantValue;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj EnumDeclaration, EnumName, EnumDefinition;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj VariableDefinition;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodDeclaration, MethodStart, MethodName, MethodVariableDeclarationList, MethodCheck;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj FormParsOptional, FormPars, FormParsList, FormParsDefinition;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ArrayStart;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ExpressionOptional, Expression;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Factor, FactorMethodActParsOptional, FactorMethodCheck;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethodType;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////// Program
+Program ::= (Program)ProgramStart GlobalDeclarationList LEFT_BRACE MethodDeclarationList RIGHT_BRACE;
+ProgramStart ::= (ProgramStart)PROGRAM IDENT:LabelProgramName;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Global
+GlobalDeclarationList ::= (MultiGlobalDeclarationList)GlobalDeclarationList GlobalDeclaration
+						| (EmptyGlobalDeclarationList)/* epsilon */ ;
+GlobalDeclaration ::= (GlobalConstantDeclaration)ConstantDeclaration
+					| (GlobalEnumDeclaration)EnumDeclaration
+					| (GlobalVariableDeclaration)VariableDeclaration;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Constant
+ConstantDeclaration ::= (ConstantDeclaration)CONST Type ConstantDeclarationList SEMI_COLON;
+ConstantDeclarationList ::= (MultiConstantDeclarationList)ConstantDeclarationList COMMA ConstantDefinition
+						| (SingleConstantDeclarationList)ConstantDefinition;
+ConstantDefinition ::= (ConstantDefinition)IDENT:LabelConstantName Assignop ConstantValue:LabelConstantValue;
+ConstantValue ::= (NumConstantValue)numConst:numValue
+				| (CharConstantValue)charConst:charValue
+				| (BoolConstantValue)boolConst:boolValue;
+Type ::= (Type)IDENT:LabelTypeName;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Enum
+EnumDeclaration ::= (EnumDeclaration)ENUM EnumName LEFT_BRACE EnumDeclarationList RIGHT_BRACE;
+EnumName ::= (EnumName)IDENT:LabelEnumName;
+EnumDeclarationList ::= (MultiEnumDeclarationList)EnumDeclarationList COMMA EnumDefinition
+				| (SingleEnumDeclarationList)EnumDefinition;
+EnumDefinition ::= (UnitializedEnumDefinition)IDENT:LabelName
+				| (InitializedEnumDefinition)IDENT:LabelName Assignop numConst:LabelEnumValue;										
+///////////////////////////////////////////////////////////////////////////////////////////////////// Variable
+VariableDeclaration ::= (VariableDeclarationNoError)Type VariableDeclarationList SEMI_COLON
+					| (VariableDeclarationError)error:LabelError {: parser.report_error("Sintaksna greska, izvrsen oporavak u liniji " + LabelErrorleft, null); :};
+VariableDeclarationList ::= (MultiVariableDeclarationList)VariableDeclarationList COMMA VariableDefinition
+								| (SingleVariableDeclarationList)VariableDefinition;
+VariableDefinition ::= (NormalVariableDefinition)IDENT:LabelVariableName 
+					| (ArrayVariableDefinition)IDENT:LabelArrayName LEFT_BRACKET RIGHT_BRACKET;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Method		
+MethodDeclarationList ::= (MultiMethodDeclarationList)MethodDeclarationList MethodDeclaration
+						| (NoneMethodDeclarationList) /* epsilon */;			
+MethodDeclaration ::= (MethodDeclaration)MethodStart LEFT_PAREN FormParsOptional RIGHT_PAREN MethodVariableDeclarationList LEFT_BRACE StatementList RIGHT_BRACE;
+MethodStart ::= (MethodStart)MethodType MethodName;
+MethodType ::= (MethodTypeVoid)VOID
+			| (MethodTypeOther)Type;
+MethodName ::= (MethodName)IDENT:LabelMethodName;
+MethodVariableDeclarationList ::= (MultiMethodVariableDeclarationList)MethodVariableDeclarationList VariableDeclaration
+								| (EmptyMethodVariableDeclarationList)/* epsilon */ ;
+///////////////////////////////////////////////////////////////////////////////////////////////////// FormPars
+FormParsOptional ::= (MultiFormParsOptional) FormPars
+					| (EmptyFormParsOptional) /* epsilon */;
+FormPars ::= (FormPars) FormParsDefinition FormParsList;
+FormParsDefinition ::= (NormalFormPars) Type IDENT:LabelParameterName
+					| (ArrayFormPars) Type IDENT:LabelParameterName LEFT_BRACKET RIGHT_BRACKET;
+FormParsList ::= (MultiFormParsList) FormParsList COMMA FormParsDefinition
+				| (EmptyFormParsList) /* epsilon */;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Statement
+StatementList ::= (MultiStatementList)StatementList Statement
+				| (EmptyStatementList)/* epsilon */;
+Statement ::= (SimpleStatement)DesignatorStatement SEMI_COLON
+			| (ReadStatement)READ LEFT_PAREN Designator RIGHT_PAREN SEMI_COLON
+			| (PrintStatementWithoutArguments)PRINT LEFT_PAREN Expression RIGHT_PAREN SEMI_COLON
+			| (PrintStatementWithArguments)PRINT LEFT_PAREN Expression COMMA numConst:LabelNumConst RIGHT_PAREN SEMI_COLON
+			| (ReturnStatement)RETURN ExpressionOptional SEMI_COLON;				
+///////////////////////////////////////////////////////////////////////////////////////////////////// DesignatorStatement
+DesignatorStatement ::= (DesignatorValueAssign)Designator Assignop Expression
+					| (DesignatorIncrement)Designator INCREMENT
+					| (DesignatorDecrement)Designator DECREMENT
+					| (DesignatorMethod)Designator MethodCheck LEFT_PAREN ActParsOptional RIGHT_PAREN;
+MethodCheck ::= (MethodCheck) /* epsilon */;
+///////////////////////////////////////////////////////////////////////////////////////////////////// ActPars
+ActParsOptional ::= (MultiActPars) ActPars
+				| (EmptyActPars) /* epsilon */;
+ActPars ::= (ActPars) ActParsList;
+ActParsList ::= (MultiActParsList) ActParsList COMMA ActParsDefinition
+			| (SingleActParsList) ActParsDefinition;
+ActParsDefinition ::= (ActParsDefinition) Expression;	
+///////////////////////////////////////////////////////////////////////////////////////////////////// Designator
+Designator ::= (DesignatorAccess)IDENT:LabelEnumName DOT IDENT:LabelEnumField
+			| (DesignatorArray)ArrayStart LEFT_BRACKET Expression RIGHT_BRACKET
+			| (SimpleDesignator)IDENT:LabelDesignatorName;
+ArrayStart ::= (ArrayStart)IDENT:LabelArrayName;			
+///////////////////////////////////////////////////////////////////////////////////////////////////// Expression
+ExpressionOptional ::= (MutliOptionalExpression) Expression
+					| (NoneOptionalExpression) /* epsilon */;
+Expression ::= (SingleExpression)Term
+			| (SubExpressionTerm)SUB Term
+			| (MultiExpressionTerm)Expression Addop Term;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Term
+Term ::= (SingleTerm)Factor
+		| (MultiTerm)Term Mulop Factor;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Factor
+Factor ::= (MethodFactor)Designator FactorMethodActParsOptional
+		| (ConstantFactor)ConstantValue			
+		| (ExpressionFactor)LEFT_PAREN Expression RIGHT_PAREN
+		| (NewFactorArray)NEW Type LEFT_BRACKET Expression RIGHT_BRACKET
+		| (NewFactorSimple)NEW Type;
+FactorMethodActParsOptional ::= (SingleFactorMethodActParsOptional) FactorMethodCheck LEFT_PAREN ActParsOptional RIGHT_PAREN
+					 | (NoneFactorMethodActParsOptional) /* epsilon */;	
+FactorMethodCheck ::= (FactorMethodCheck) /* epsilon */;					 														
+///////////////////////////////////////////////////////////////////////////////////////////////////// Assignop
+Assignop ::= (AssignopNoError)EQUAL
+			| (AssignopError) error:LabelError {: parser.report_error("Sintaksna greska, izvrsen oporavak u liniji " + LabelErrorleft, null); :};					
+///////////////////////////////////////////////////////////////////////////////////////////////////// Addop
+Addop ::= (AddopAdd)ADD
+		| (AddopSub)SUB;
+///////////////////////////////////////////////////////////////////////////////////////////////////// Mulop
+Mulop ::= (MulopMul)MUL
+		| (MulopDiv)DIV
+		| (MulopMod)MOD;					

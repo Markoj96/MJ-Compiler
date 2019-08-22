@@ -1,0 +1,646 @@
+/*================================================================*/ 
+/* 
+  JavaCup Specification for the JavaCup Specification Language
+  by Scott Hudson, GVU Center, Georgia Tech, August 1995
+  and Frank Flannery, Department of Computer Science, Princeton Univ,
+  July 1996
+  Bug Fixes: C. Scott Ananian, Dept of Electrical Engineering, Princeton
+  University, October 1996. [later Massachusetts Institute of Technology]
+
+
+  This JavaCup specification is used to implement JavaCup itself.
+  It specifies the parser for the JavaCup specification language.
+  (It also serves as a reasonable example of what a typical JavaCup
+  spec looks like).
+
+  The specification has the following parts:
+    Package and import declarations
+      These serve the same purpose as in a normal Java source file
+      (and will appear in the generated code for the parser). In this 
+      case we are part of the java_cup package and we import both the
+      java_cup runtime system and Hashtable from the standard Java
+      utilities package.
+
+    Action code
+      This section provides code that is included with the class encapsulating
+      the various pieces of user code embedded in the grammar (i.e., the
+      semantic actions).  This provides a series of helper routines and
+      data structures that the semantic actions use.
+
+    Parser code    
+      This section provides code included in the parser class itself.  In
+      this case we override the default error reporting routines.
+
+    Init with and scan with 
+      These sections provide small bits of code that initialize, then 
+      indicate how to invoke the scanner.
+
+    Symbols and grammar
+      These sections declare all the terminal and non terminal symbols 
+      and the types of objects that they will be represented by at runtime,
+      then indicate the start symbol of the grammar (), and finally provide
+      the grammar itself (with embedded actions).
+
+    Operation of the parser
+      The parser acts primarily by accumulating data structures representing
+      various parts of the specification.  Various small parts (e.g., single
+      code strings) are stored as static variables of the emit class and
+      in a few cases as variables declared in the action code section.  
+      Terminals, non terminals, and productions, are maintained as collection
+      accessible via static methods of those classes.  In addition, two 
+      symbol tables are kept:  
+	symbols   maintains the name to object mapping for all symbols
+	non_terms maintains a separate mapping containing only the non terms
+
+      Several intermediate working structures are also declared in the action
+      code section.  These include: rhs_parts, rhs_pos, and lhs_nt which
+      build up parts of the current production while it is being parsed.
+	
+  Author(s)
+    Scott Hudson, GVU Center, Georgia Tech.
+    Frank Flannery, Department of Computer Science, Princeton Univ.
+    C. Scott Ananian, Department of Electrical Engineering, Princeton Univ.
+
+  Revisions
+    v0.9a   First released version                     [SEH] 8/29/95
+    v0.9b   Updated for beta language (throws clauses) [SEH] 11/25/95
+    v0.10a  Made many improvements/changes. now offers:
+              return value
+              left/right positions and propagations
+              cleaner label references
+              precedence and associativity for terminals
+              contextual precedence for productions
+              [FF] 7/3/96
+    v0.10b  Fixed %prec directive so it works like it's supposed to.
+              [CSA] 10/10/96
+    v0.10g   Added support for array types on symbols.
+              [CSA] 03/23/98
+    v0.10i  Broaden set of IDs allowed in multipart_id and label_id so
+            that only java reserved words (and not CUP reserved words like
+            'parser' and 'start') are prohibited.  Allow reordering of
+	    action code, parser code, init code, and scan with sections,
+	    and made closing semicolon optional for these sections.
+	    Added 'nonterminal' as a terminal symbol, finally fixing a
+	    spelling mistake that's been around since the beginning.
+	    For backwards compatibility, you can still misspell the
+	    word if you like.
+*/
+/*================================================================*/ 
+
+package java_cup.astext;
+import java_cup.runtime.*;
+import java.util.Hashtable;
+import java.util.ArrayList;
+import java.io.PrintWriter;
+
+/*----------------------------------------------------------------*/ 
+
+action code {:
+	String symType="Object";
+	String symName;
+	String prodName;
+	String lhName;
+	
+	String args=new String();
+	int count=0;
+	AstSymInfo lhInfo;
+	String tempLabel;
+	boolean genLabel;
+	
+	static StringBuffer buffer;
+	String actionToAppend;
+	
+	//list which contains info for all symbols in specification
+	ArrayList<AstSymInfo> syms=new ArrayList<AstSymInfo> ();
+	
+	private boolean isSimpleType(String type) {
+		if(type.equals("String")) return true;
+		else if(type.equals("int")) return true;
+		else if(type.equals("Integer")) return true;
+		else if(type.equals("char")) return true;
+		else if(type.equals("Character")) return true;
+		
+		else return false;
+	}
+	
+	private AstSymInfo getInfo(String name) {
+		for(AstSymInfo info: syms)
+			if(name.equals(info.getName())) return info;
+			
+		return null;
+	}
+	
+	//nonterminal name with capitalized first letter
+	private String toClassName(String name) {
+		if(name==null) return null;
+        return Character.toUpperCase(name.charAt(0))+name.substring(1);
+	}
+	
+:};
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+parser code {:
+
+  /* override error routines */
+
+  public void report_fatal_error(
+    String   message,
+    Object   info)
+    {
+      done_parsing();
+      //lexer.emit_error(message);
+      System.err.println("Can't recover from previous error(s), giving up.");
+      System.exit(1);
+    }
+
+    public void report_error(String message, Object info)
+    {
+      //lexer.emit_error(message);
+    }
+		
+	public void setBuffer(StringBuffer buf) { CUP$AstParser$actions.buffer=buf; }
+:};
+
+/*----------------------------------------------------------------*/ 
+
+//init with {: lexer.init(); :};
+//scan with {: return lexer.next_token(); :};
+
+/*----------------------------------------------------------------*/ 
+
+terminal
+  PACKAGE, IMPORT, CODE, ACTION, PARSER, TERMINAL, NON, INIT, SCAN, WITH, 
+  START, SEMI, COMMA, STAR, DOT, COLON, COLON_COLON_EQUALS, BAR, PRECEDENCE,
+  LEFT, RIGHT, NONASSOC, PERCENT_PREC, LBRACK, RBRACK, NONTERMINAL;
+  
+//added for classgen extension  
+terminal
+  LPAREN, RPAREN;
+
+terminal String  ID, CODE_STRING;
+
+non terminal
+  spec, package_spec, import_list, action_code_part, 
+  code_parts, code_part, opt_semi, non_terminal,
+  parser_code_part, symbol_list, start_spec, production_list, 
+  multipart_id, import_spec, import_id, init_code, scan_code, symbol, 
+  type_id, term_name_list, non_term_name_list, production, prod_part_list, 
+  prod_part, new_term_id, new_non_term_id, rhs_list, rhs, empty,
+  precedence_list, preced, terminal_list, precedence_l, declares_term, 
+  declares_non_term;
+
+non terminal String  nt_id, symbol_id, label_id, opt_label, terminal_id,
+                     term_id, robust_id;
+
+/*----------------------------------------------------------------*/ 
+
+start with spec;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+spec ::= 
+	package_spec
+	import_list
+	code_parts
+	symbol_list
+	precedence_list
+	start_spec
+	production_list
+	|
+	/* error recovery assuming something went wrong before symbols 
+	   and we have TERMINAL or NON TERMINAL to sync on.  if we get
+	   an error after that, we recover inside symbol_list or 
+	   production_list 
+	*/
+	error
+	symbol_list
+	precedence_list
+	start_spec
+	production_list
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+package_spec ::= 
+	PACKAGE
+	multipart_id
+	SEMI
+	|
+	empty
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+import_list ::=
+	import_list
+	import_spec
+	|
+	empty
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+import_spec ::=
+	IMPORT 
+	import_id 
+	SEMI
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+// allow any order; all parts are optional. [CSA, 23-Jul-1999]
+// (we check in the part action to make sure we don't have 2 of any part)
+code_part ::=
+	action_code_part | parser_code_part | init_code | scan_code ;
+code_parts ::= 
+	| code_parts code_part;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+action_code_part ::= 
+	ACTION CODE CODE_STRING:user_code opt_semi
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+parser_code_part ::= 
+	PARSER CODE CODE_STRING:user_code opt_semi
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+init_code ::= 
+	INIT WITH CODE_STRING:user_code opt_semi
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+scan_code ::=
+	SCAN WITH CODE_STRING:user_code opt_semi
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+symbol_list ::= symbol_list symbol | symbol;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+symbol ::= 	
+	TERMINAL 
+	type_id	
+	declares_term {: symType="Object"; :}
+	|
+	TERMINAL
+	declares_term {: symType="Object"; :}
+	|
+	non_terminal
+	type_id
+	declares_non_term {: symType="Object"; :}
+	|
+	non_terminal
+	declares_non_term {: symType="Object"; :}
+	|
+	/* error recovery productions -- sync on semicolon */
+
+	TERMINAL
+	error 	
+	SEMI
+	|
+	non_terminal
+	error 	
+	SEMI
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+declares_term ::=
+	term_name_list
+	SEMI
+	;
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+declares_non_term ::=
+	non_term_name_list	
+	SEMI
+	;
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+term_name_list ::= term_name_list COMMA {: buffer.append(","); :} new_term_id 
+	{: syms.add(new AstSymInfo(symName, true, symType)); :}
+	|
+	new_term_id {: syms.add(new AstSymInfo(symName, true, symType)); :};
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+non_term_name_list ::=
+	non_term_name_list
+	COMMA {: if(!symType.equals("Object")) buffer.append(","); else buffer.append(";\nnonterminal"); :} 
+	new_non_term_id 
+	{: 
+		syms.add(new AstSymInfo(symName, false, symType));  
+		if(symType.equals("Object")) buffer.insert(buffer.length()-symName.length(), toClassName(symName)+" ");
+	:}
+	|
+	new_non_term_id 
+	{: 
+		syms.add(new AstSymInfo(symName, false, symType)); 
+		if(symType.equals("Object")) buffer.insert(buffer.length()-symName.length(), toClassName(symName)+" ");		
+	:}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+
+precedence_list ::= precedence_l | empty; 
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+precedence_l ::= precedence_l preced | preced;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+preced ::= 
+	PRECEDENCE LEFT 	
+        terminal_list SEMI
+	|
+	PRECEDENCE RIGHT 	
+        terminal_list SEMI
+	|
+	PRECEDENCE NONASSOC 	
+        terminal_list SEMI
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+terminal_list ::= terminal_list COMMA {: buffer.append(","); :} terminal_id
+	|
+	terminal_id
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+terminal_id ::= term_id:sym
+	;
+	  
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+term_id ::= symbol_id:sym
+        ;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+start_spec ::= 
+	START WITH nt_id:start_name 
+	SEMI
+	|
+	empty
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+production_list ::= production_list production | production;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+production ::=
+	nt_id:lhs_id	
+	{:  
+		lhName=lhs_id;
+		lhInfo=getInfo(lhName);
+	:}
+	COLON_COLON_EQUALS
+	rhs_list
+	SEMI
+	
+	|
+	error
+	SEMI
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+rhs_list ::= rhs_list BAR rhs 
+	{: 
+		if(actionToAppend.length()>0) {
+			buffer.append(" {: "+actionToAppend+" :");
+			buffer.append("}");
+		}
+	:}
+	| rhs 
+	{: 
+		if(actionToAppend.length()>0) {
+			buffer.append(" {: "+actionToAppend+" :"); 
+			buffer.append("}");
+		}
+	:}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+rhs ::= 
+	prod_part_list PERCENT_PREC term_id:term_name
+	{:	
+		if(!isSimpleType(lhInfo.getType())) {
+			String tempName=lhName+"Derived"+lhInfo.getTimesUsed();
+                        int i = args.indexOf(",");
+			if(args.length()>0) args=args.substring(0, args.length()-2);
+			actionToAppend="RESULT=new "+toClassName(tempName)+"("+args+");";
+                        // DB - support for error line reporting
+                        if (i != -1)
+                            actionToAppend+=" RESULT.setLine("+args.substring(0,i)+"left);";
+		} else actionToAppend="";
+		args=new String();
+		count=0;
+	:}
+	|
+	//added for ast extension
+	LPAREN ID:prod_name RPAREN prod_part_list PERCENT_PREC term_id:term_name
+	{:	
+		if(!isSimpleType(lhInfo.getType())) {
+                        int i = args.indexOf(",");
+			if(args.length()>0) args=args.substring(0, args.length()-2);
+			actionToAppend="RESULT=new "+prod_name+"("+args+");";
+                        // DB - support for error line reporting
+                        if (i != -1)
+                            actionToAppend+=" RESULT.setLine("+args.substring(0,i)+"left);";
+		} else actionToAppend="";
+		args=new String();
+		count=0;
+	:}
+	|
+	prod_part_list
+	{:	
+		if(!isSimpleType(lhInfo.getType())) {
+			String tempName=lhName+"Derived"+lhInfo.getTimesUsed();
+                        int i = args.indexOf(",");
+			if(args.length()>0) args=args.substring(0, args.length()-2);
+			actionToAppend="RESULT=new "+toClassName(tempName)+"("+args+");";
+                        // DB - support for error line reporting
+                        if (i != -1)
+                            actionToAppend+=" RESULT.setLine("+args.substring(0,i)+"left);";
+		} else actionToAppend="";
+		args=new String();
+		count=0;
+	:}
+	|
+	//added for ast extension
+	LPAREN ID:prod_name RPAREN prod_part_list
+	{:	
+		if(!isSimpleType(lhInfo.getType())) {
+                        int i = args.indexOf(",");
+			if(args.length()>0) args=args.substring(0, args.length()-2);
+			actionToAppend="RESULT=new "+prod_name+"("+args+");";
+                        // DB - support for error line reporting
+                        if (i != -1)
+                            actionToAppend+=" RESULT.setLine("+args.substring(0,i)+"left);";
+		} else actionToAppend="";
+		args=new String();
+		count=0;
+	:}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+prod_part_list ::= prod_part_list prod_part | empty;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+prod_part ::=
+	symbol_id:symid
+	{:	
+		genLabel=false;
+		AstSymInfo tempInfo=getInfo(symid);
+		if(tempInfo!=null && !(tempInfo.isTerminal() && tempInfo.getType().equals("Object"))) {
+			genLabel=true;
+			tempLabel=symid;
+		}
+	:}
+	opt_label:labid
+	{:
+		AstSymInfo tempInfo=getInfo(symid);
+		if(tempInfo!=null) {
+			if(tempInfo.isTerminal()) {
+				if(!tempInfo.getType().equals("Object")) {
+					if(labid!=null)
+						args+=labid+", ";
+					else
+						args+=tempLabel+", ";
+				}
+			} else {							
+				if(labid!=null)
+					args+=labid+", ";
+				else
+					args+=tempLabel+", ";			
+			}
+		}
+	:}
+	|
+	CODE_STRING:code_str
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+opt_label ::=
+	COLON label_id:labid {: RESULT=labid; :}
+	|
+	empty 
+	{: 
+		if(genLabel==true) {
+			tempLabel=tempLabel.charAt(0)+""+ ++count;
+			buffer.append(":"+tempLabel);
+		}
+	:}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+multipart_id ::=
+	multipart_id DOT robust_id:another_id {: symType+="."+another_id; :}
+	|
+	robust_id:an_id {: symType=an_id; :}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+import_id ::= 
+	multipart_id DOT STAR {: symType="Object"; :}
+	|
+	multipart_id {: symType="Object"; :}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+type_id ::= multipart_id
+	| type_id LBRACK RBRACK {: symType+="[]"; :}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+new_term_id ::= 
+	ID:term_id {: symName=term_id; :}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+new_non_term_id ::=
+	ID:non_term_id {: symName=non_term_id; :}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+nt_id ::=
+	ID:the_id {: RESULT=the_id; :}
+	| error	
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+symbol_id ::=
+	ID:the_id {: RESULT=the_id; :}
+	| error
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+label_id ::= 
+	robust_id:the_id {: RESULT=the_id; :}
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+robust_id ::= /* all ids that aren't reserved words in Java */
+	ID:the_id	{: RESULT=the_id; :}
+	/* package is reserved. */
+	/* import is reserved. */
+	| CODE		
+	| ACTION	
+	| PARSER	
+	| TERMINAL	
+	| NON		
+	| NONTERMINAL   
+	| INIT		
+	| SCAN		
+	| WITH		
+	| START		
+	| PRECEDENCE	
+	| LEFT		
+	| RIGHT		
+	| NONASSOC	
+	| error
+	;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+non_terminal ::= NON TERMINAL | NONTERMINAL;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+opt_semi ::= /* nothing */
+	| SEMI;
+
+/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */ 
+
+empty ::= /* nothing */;
+
+/*----------------------------------------------------------------*/  

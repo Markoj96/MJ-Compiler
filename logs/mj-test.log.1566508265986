@@ -1,0 +1,1719 @@
+INFO  23:03:40,781 - Compiling source file: C:\Users\Marko\Desktop\PP1 Projekat\workspace\MJCompiler\test\program.mj
+INFO  23:03:40,855 - #2 program
+INFO  23:03:40,856 - #5 test301
+INFO  23:03:40,856 - #4 enum
+INFO  23:03:40,858 - #5 Broj
+INFO  23:03:40,859 - #28 {
+INFO  23:03:40,861 - #5 NULA
+INFO  23:03:40,872 - #10 ,
+INFO  23:03:40,873 - #5 JEDAN
+INFO  23:03:40,873 - #10 ,
+INFO  23:03:40,873 - #5 PET
+INFO  23:03:40,873 - #18 =
+INFO  23:03:40,874 - #6 5
+INFO  23:03:40,883 - #10 ,
+INFO  23:03:40,883 - #5 DESET
+INFO  23:03:40,883 - #18 =
+INFO  23:03:40,884 - #6 10
+INFO  23:03:40,884 - #29 }
+INFO  23:03:40,884 - #3 const
+INFO  23:03:40,885 - #5 int
+INFO  23:03:40,885 - #5 jedan
+INFO  23:03:40,886 - #18 =
+INFO  23:03:40,887 - #6 1
+INFO  23:03:40,887 - #9 ;
+INFO  23:03:40,888 - #3 const
+INFO  23:03:40,889 - #5 int
+INFO  23:03:40,889 - #5 pet
+INFO  23:03:40,889 - #18 =
+INFO  23:03:40,889 - #6 5
+INFO  23:03:40,889 - #9 ;
+INFO  23:03:40,889 - #5 int
+INFO  23:03:40,889 - #5 niz
+INFO  23:03:40,890 - #26 [
+INFO  23:03:40,890 - #27 ]
+INFO  23:03:40,890 - #9 ;
+INFO  23:03:40,890 - #5 char
+INFO  23:03:40,890 - #5 nizch
+INFO  23:03:40,890 - #26 [
+INFO  23:03:40,890 - #27 ]
+INFO  23:03:40,891 - #9 ;
+INFO  23:03:40,891 - #28 {
+INFO  23:03:40,891 - #5 int
+INFO  23:03:40,892 - #5 inc
+INFO  23:03:40,892 - #24 (
+INFO  23:03:40,893 - #5 int
+INFO  23:03:40,894 - #5 broj
+INFO  23:03:40,895 - #25 )
+INFO  23:03:40,897 - #28 {
+INFO  23:03:40,899 - #33 return
+INFO  23:03:40,900 - #5 broj
+INFO  23:03:40,900 - #19 +
+INFO  23:03:40,902 - #5 Broj
+INFO  23:03:40,903 - #11 .
+INFO  23:03:40,903 - #5 JEDAN
+INFO  23:03:40,903 - #9 ;
+INFO  23:03:40,904 - #29 }
+INFO  23:03:40,904 - #13 void
+INFO  23:03:40,905 - #5 mul
+INFO  23:03:40,906 - #24 (
+INFO  23:03:40,906 - #5 int
+INFO  23:03:40,910 - #5 arr
+INFO  23:03:40,911 - #26 [
+INFO  23:03:40,912 - #27 ]
+INFO  23:03:40,914 - #10 ,
+INFO  23:03:40,914 - #5 int
+INFO  23:03:40,915 - #5 index
+INFO  23:03:40,915 - #10 ,
+INFO  23:03:40,915 - #5 int
+INFO  23:03:40,915 - #5 b
+INFO  23:03:40,915 - #25 )
+INFO  23:03:40,915 - #28 {
+INFO  23:03:40,915 - #5 arr
+INFO  23:03:40,915 - #26 [
+INFO  23:03:40,916 - #5 index
+INFO  23:03:40,916 - #27 ]
+INFO  23:03:40,916 - #18 =
+INFO  23:03:40,916 - #5 arr
+INFO  23:03:40,916 - #26 [
+INFO  23:03:40,916 - #5 index
+INFO  23:03:40,917 - #27 ]
+INFO  23:03:40,917 - #21 *
+INFO  23:03:40,917 - #5 b
+INFO  23:03:40,918 - #9 ;
+INFO  23:03:40,931 - #29 }
+INFO  23:03:40,931 - #13 void
+INFO  23:03:40,932 - #5 main
+INFO  23:03:40,932 - #24 (
+INFO  23:03:40,932 - #25 )
+INFO  23:03:40,932 - #5 int
+INFO  23:03:40,933 - #5 bodovi
+INFO  23:03:40,933 - #9 ;
+INFO  23:03:40,933 - #5 Broj
+INFO  23:03:40,933 - #5 nula
+INFO  23:03:40,933 - #10 ,
+INFO  23:03:40,933 - #5 jedan
+INFO  23:03:40,933 - #9 ;
+INFO  23:03:40,933 - #28 {
+INFO  23:03:40,933 - #5 nula
+INFO  23:03:40,933 - #18 =
+INFO  23:03:40,933 - #5 Broj
+INFO  23:03:40,933 - #11 .
+INFO  23:03:40,933 - #5 NULA
+INFO  23:03:40,934 - #9 ;
+INFO  23:03:40,934 - #5 jedan
+INFO  23:03:40,934 - #18 =
+INFO  23:03:40,934 - #5 Broj
+INFO  23:03:40,934 - #11 .
+INFO  23:03:40,934 - #5 JEDAN
+INFO  23:03:40,934 - #9 ;
+INFO  23:03:40,934 - #5 bodovi
+INFO  23:03:40,934 - #18 =
+INFO  23:03:40,934 - #6 0
+INFO  23:03:40,934 - #9 ;
+INFO  23:03:40,934 - #5 bodovi
+INFO  23:03:40,934 - #14 ++
+INFO  23:03:40,935 - #9 ;
+INFO  23:03:40,935 - #5 bodovi
+INFO  23:03:40,935 - #18 =
+INFO  23:03:40,935 - #5 bodovi
+INFO  23:03:40,935 - #19 +
+INFO  23:03:40,935 - #5 jedan
+INFO  23:03:40,935 - #9 ;
+INFO  23:03:40,935 - #5 bodovi
+INFO  23:03:40,935 - #18 =
+INFO  23:03:40,935 - #5 bodovi
+INFO  23:03:40,935 - #21 *
+INFO  23:03:40,935 - #5 pet
+INFO  23:03:40,936 - #9 ;
+INFO  23:03:40,936 - #5 bodovi
+INFO  23:03:40,936 - #15 --
+INFO  23:03:40,936 - #9 ;
+INFO  23:03:40,936 - #17 print
+INFO  23:03:40,936 - #24 (
+INFO  23:03:40,936 - #5 bodovi
+INFO  23:03:40,936 - #25 )
+INFO  23:03:40,936 - #9 ;
+INFO  23:03:40,936 - #5 niz
+INFO  23:03:40,936 - #18 =
+INFO  23:03:40,936 - #12 new
+INFO  23:03:40,937 - #5 int
+INFO  23:03:40,937 - #26 [
+INFO  23:03:40,937 - #6 2
+INFO  23:03:40,937 - #27 ]
+INFO  23:03:40,937 - #9 ;
+INFO  23:03:40,937 - #5 niz
+INFO  23:03:40,937 - #26 [
+INFO  23:03:40,937 - #5 nula
+INFO  23:03:40,937 - #27 ]
+INFO  23:03:40,937 - #18 =
+INFO  23:03:40,937 - #5 pet
+INFO  23:03:40,937 - #9 ;
+INFO  23:03:40,937 - #5 niz
+INFO  23:03:40,937 - #26 [
+INFO  23:03:40,938 - #6 1
+INFO  23:03:40,938 - #27 ]
+INFO  23:03:40,938 - #18 =
+INFO  23:03:40,938 - #5 Broj
+INFO  23:03:40,938 - #11 .
+INFO  23:03:40,938 - #5 DESET
+INFO  23:03:40,938 - #9 ;
+INFO  23:03:40,938 - #5 mul
+INFO  23:03:40,938 - #24 (
+INFO  23:03:40,939 - #5 niz
+INFO  23:03:40,939 - #10 ,
+INFO  23:03:40,940 - #5 inc
+INFO  23:03:40,940 - #24 (
+INFO  23:03:40,941 - #6 0
+INFO  23:03:40,941 - #25 )
+INFO  23:03:40,942 - #10 ,
+INFO  23:03:40,942 - #6 2
+INFO  23:03:40,942 - #25 )
+INFO  23:03:40,942 - #9 ;
+INFO  23:03:40,942 - #5 mul
+INFO  23:03:40,942 - #24 (
+INFO  23:03:40,942 - #5 niz
+INFO  23:03:40,942 - #10 ,
+INFO  23:03:40,942 - #5 Broj
+INFO  23:03:40,942 - #11 .
+INFO  23:03:40,943 - #5 NULA
+INFO  23:03:40,943 - #10 ,
+INFO  23:03:40,943 - #5 inc
+INFO  23:03:40,943 - #24 (
+INFO  23:03:40,943 - #5 inc
+INFO  23:03:40,943 - #24 (
+INFO  23:03:40,943 - #5 Broj
+INFO  23:03:40,943 - #11 .
+INFO  23:03:40,943 - #5 JEDAN
+INFO  23:03:40,943 - #25 )
+INFO  23:03:40,943 - #19 +
+INFO  23:03:40,943 - #6 1
+INFO  23:03:40,943 - #25 )
+INFO  23:03:40,943 - #25 )
+INFO  23:03:40,943 - #9 ;
+INFO  23:03:40,943 - #5 bodovi
+INFO  23:03:40,943 - #18 =
+INFO  23:03:40,943 - #5 niz
+INFO  23:03:40,943 - #26 [
+INFO  23:03:40,944 - #6 1
+INFO  23:03:40,944 - #27 ]
+INFO  23:03:40,944 - #22 /
+INFO  23:03:40,944 - #5 niz
+INFO  23:03:40,944 - #26 [
+INFO  23:03:40,944 - #6 0
+INFO  23:03:40,945 - #27 ]
+INFO  23:03:40,945 - #9 ;
+INFO  23:03:40,946 - #17 print
+INFO  23:03:40,947 - #24 (
+INFO  23:03:40,948 - #5 bodovi
+INFO  23:03:40,948 - #25 )
+INFO  23:03:40,948 - #9 ;
+INFO  23:03:40,948 - #17 print
+INFO  23:03:40,948 - #24 (
+INFO  23:03:40,948 - #5 niz
+INFO  23:03:40,948 - #26 [
+INFO  23:03:40,948 - #5 Broj
+INFO  23:03:40,948 - #11 .
+INFO  23:03:40,948 - #5 JEDAN
+INFO  23:03:40,949 - #27 ]
+INFO  23:03:40,949 - #25 )
+INFO  23:03:40,949 - #9 ;
+INFO  23:03:40,949 - #5 nizch
+INFO  23:03:40,949 - #18 =
+INFO  23:03:40,949 - #12 new
+INFO  23:03:40,949 - #5 char
+INFO  23:03:40,949 - #26 [
+INFO  23:03:40,949 - #6 3
+INFO  23:03:40,949 - #27 ]
+INFO  23:03:40,949 - #9 ;
+INFO  23:03:40,949 - #5 nizch
+INFO  23:03:40,949 - #26 [
+INFO  23:03:40,949 - #6 0
+INFO  23:03:40,949 - #27 ]
+INFO  23:03:40,949 - #18 =
+INFO  23:03:40,949 - #7 'a'
+INFO  23:03:40,950 - #9 ;
+INFO  23:03:40,950 - #5 nizch
+INFO  23:03:40,950 - #26 [
+INFO  23:03:40,950 - #5 jedan
+INFO  23:03:40,950 - #27 ]
+INFO  23:03:40,950 - #18 =
+INFO  23:03:40,950 - #7 'b'
+INFO  23:03:40,950 - #9 ;
+INFO  23:03:40,950 - #5 nizch
+INFO  23:03:40,951 - #26 [
+INFO  23:03:40,951 - #5 pet
+INFO  23:03:40,951 - #20 -
+INFO  23:03:40,951 - #6 3
+INFO  23:03:40,951 - #27 ]
+INFO  23:03:40,951 - #18 =
+INFO  23:03:40,951 - #7 'c'
+INFO  23:03:40,951 - #9 ;
+INFO  23:03:40,952 - #17 print
+INFO  23:03:40,952 - #24 (
+INFO  23:03:40,952 - #5 nizch
+INFO  23:03:40,952 - #26 [
+INFO  23:03:40,952 - #5 inc
+INFO  23:03:40,953 - #24 (
+INFO  23:03:40,954 - #6 0
+INFO  23:03:40,954 - #25 )
+INFO  23:03:40,954 - #27 ]
+INFO  23:03:40,954 - #25 )
+INFO  23:03:40,954 - #9 ;
+INFO  23:03:40,954 - #17 print
+INFO  23:03:40,954 - #24 (
+INFO  23:03:40,954 - #5 nizch
+INFO  23:03:40,954 - #26 [
+INFO  23:03:40,954 - #5 jedan
+INFO  23:03:40,954 - #21 *
+INFO  23:03:40,954 - #6 2
+INFO  23:03:40,954 - #27 ]
+INFO  23:03:40,955 - #25 )
+INFO  23:03:40,955 - #9 ;
+INFO  23:03:40,955 - #5 bodovi
+INFO  23:03:40,955 - #18 =
+INFO  23:03:40,955 - #5 bodovi
+INFO  23:03:40,955 - #19 +
+INFO  23:03:40,955 - #24 (
+INFO  23:03:40,955 - #24 (
+INFO  23:03:40,955 - #5 pet
+INFO  23:03:40,955 - #21 *
+INFO  23:03:40,955 - #5 jedan
+INFO  23:03:40,956 - #20 -
+INFO  23:03:40,956 - #6 1
+INFO  23:03:40,956 - #25 )
+INFO  23:03:40,956 - #21 *
+INFO  23:03:40,956 - #5 inc
+INFO  23:03:40,956 - #24 (
+INFO  23:03:40,956 - #5 Broj
+INFO  23:03:40,956 - #11 .
+INFO  23:03:40,956 - #5 JEDAN
+INFO  23:03:40,956 - #25 )
+INFO  23:03:40,956 - #20 -
+INFO  23:03:40,956 - #24 (
+INFO  23:03:40,956 - #6 3
+INFO  23:03:40,956 - #23 %
+INFO  23:03:40,956 - #6 2
+INFO  23:03:40,957 - #19 +
+INFO  23:03:40,957 - #6 3
+INFO  23:03:40,957 - #21 *
+INFO  23:03:40,957 - #6 2
+INFO  23:03:40,957 - #20 -
+INFO  23:03:40,957 - #6 3
+INFO  23:03:40,957 - #25 )
+INFO  23:03:40,957 - #20 -
+INFO  23:03:40,957 - #5 inc
+INFO  23:03:40,957 - #24 (
+INFO  23:03:40,957 - #5 Broj
+INFO  23:03:40,958 - #11 .
+INFO  23:03:40,958 - #5 NULA
+INFO  23:03:40,958 - #25 )
+INFO  23:03:40,958 - #21 *
+INFO  23:03:40,958 - #6 0
+INFO  23:03:40,958 - #25 )
+INFO  23:03:40,958 - #9 ;
+INFO  23:03:40,958 - #17 print
+INFO  23:03:40,958 - #24 (
+INFO  23:03:40,958 - #5 bodovi
+INFO  23:03:40,958 - #25 )
+INFO  23:03:40,958 - #9 ;
+INFO  23:03:40,958 - #16 read
+INFO  23:03:40,958 - #24 (
+INFO  23:03:40,958 - #5 bodovi
+INFO  23:03:40,958 - #25 )
+INFO  23:03:40,958 - #9 ;
+INFO  23:03:40,958 - #5 bodovi
+INFO  23:03:40,958 - #18 =
+INFO  23:03:40,958 - #5 inc
+INFO  23:03:40,959 - #24 (
+INFO  23:03:40,959 - #5 bodovi
+INFO  23:03:40,959 - #25 )
+INFO  23:03:40,959 - #9 ;
+INFO  23:03:40,959 - #17 print
+INFO  23:03:40,959 - #24 (
+INFO  23:03:40,959 - #5 bodovi
+INFO  23:03:40,959 - #25 )
+INFO  23:03:40,959 - #9 ;
+INFO  23:03:40,959 - #29 }
+INFO  23:03:40,959 - #29 }
+INFO  23:03:40,991 - Program(
+  ProgramStart(
+   test301
+  ) [ProgramStart]
+  MultiGlobalDeclarationList(
+    MultiGlobalDeclarationList(
+      MultiGlobalDeclarationList(
+        MultiGlobalDeclarationList(
+          MultiGlobalDeclarationList(
+            EmptyGlobalDeclarationList(
+            ) [EmptyGlobalDeclarationList]
+            GlobalEnumDeclaration(
+              EnumDeclaration(
+                EnumName(
+                 Broj
+                ) [EnumName]
+                MultiEnumDeclarationList(
+                  MultiEnumDeclarationList(
+                    MultiEnumDeclarationList(
+                      SingleEnumDeclarationList(
+                        UnitializedEnumDefinition(
+                         NULA
+                        ) [UnitializedEnumDefinition]
+                      ) [SingleEnumDeclarationList]
+                      UnitializedEnumDefinition(
+                       JEDAN
+                      ) [UnitializedEnumDefinition]
+                    ) [MultiEnumDeclarationList]
+                    InitializedEnumDefinition(
+                     PET
+                      AssignopNoError(
+                      ) [AssignopNoError]
+                     5
+                    ) [InitializedEnumDefinition]
+                  ) [MultiEnumDeclarationList]
+                  InitializedEnumDefinition(
+                   DESET
+                    AssignopNoError(
+                    ) [AssignopNoError]
+                   10
+                  ) [InitializedEnumDefinition]
+                ) [MultiEnumDeclarationList]
+              ) [EnumDeclaration]
+            ) [GlobalEnumDeclaration]
+          ) [MultiGlobalDeclarationList]
+          GlobalConstantDeclaration(
+            ConstantDeclaration(
+              Type(
+               int
+              ) [Type]
+              SingleConstantDeclarationList(
+                ConstantDefinition(
+                 jedan
+                  AssignopNoError(
+                  ) [AssignopNoError]
+                  NumConstantValue(
+                   1
+                  ) [NumConstantValue]
+                ) [ConstantDefinition]
+              ) [SingleConstantDeclarationList]
+            ) [ConstantDeclaration]
+          ) [GlobalConstantDeclaration]
+        ) [MultiGlobalDeclarationList]
+        GlobalConstantDeclaration(
+          ConstantDeclaration(
+            Type(
+             int
+            ) [Type]
+            SingleConstantDeclarationList(
+              ConstantDefinition(
+               pet
+                AssignopNoError(
+                ) [AssignopNoError]
+                NumConstantValue(
+                 5
+                ) [NumConstantValue]
+              ) [ConstantDefinition]
+            ) [SingleConstantDeclarationList]
+          ) [ConstantDeclaration]
+        ) [GlobalConstantDeclaration]
+      ) [MultiGlobalDeclarationList]
+      GlobalVariableDeclaration(
+        VariableDeclarationNoError(
+          Type(
+           int
+          ) [Type]
+          SingleVariableDeclarationList(
+            ArrayVariableDefinition(
+             niz
+            ) [ArrayVariableDefinition]
+          ) [SingleVariableDeclarationList]
+        ) [VariableDeclarationNoError]
+      ) [GlobalVariableDeclaration]
+    ) [MultiGlobalDeclarationList]
+    GlobalVariableDeclaration(
+      VariableDeclarationNoError(
+        Type(
+         char
+        ) [Type]
+        SingleVariableDeclarationList(
+          ArrayVariableDefinition(
+           nizch
+          ) [ArrayVariableDefinition]
+        ) [SingleVariableDeclarationList]
+      ) [VariableDeclarationNoError]
+    ) [GlobalVariableDeclaration]
+  ) [MultiGlobalDeclarationList]
+  MultiMethodDeclarationList(
+    MultiMethodDeclarationList(
+      MultiMethodDeclarationList(
+        NoneMethodDeclarationList(
+        ) [NoneMethodDeclarationList]
+        MethodDeclaration(
+          MethodStart(
+            MethodTypeOther(
+              Type(
+               int
+              ) [Type]
+            ) [MethodTypeOther]
+            MethodName(
+             inc
+            ) [MethodName]
+          ) [MethodStart]
+          MultiFormParsOptional(
+            FormPars(
+              NormalFormPars(
+                Type(
+                 int
+                ) [Type]
+               broj
+              ) [NormalFormPars]
+              EmptyFormParsList(
+              ) [EmptyFormParsList]
+            ) [FormPars]
+          ) [MultiFormParsOptional]
+          EmptyMethodVariableDeclarationList(
+          ) [EmptyMethodVariableDeclarationList]
+          MultiStatementList(
+            EmptyStatementList(
+            ) [EmptyStatementList]
+            ReturnStatement(
+              MutliOptionalExpression(
+                MultiExpressionTerm(
+                  SingleExpression(
+                    SingleTerm(
+                      MethodFactor(
+                        SimpleDesignator(
+                         broj
+                        ) [SimpleDesignator]
+                        NoneFactorMethodActParsOptional(
+                        ) [NoneFactorMethodActParsOptional]
+                      ) [MethodFactor]
+                    ) [SingleTerm]
+                  ) [SingleExpression]
+                  AddopAdd(
+                  ) [AddopAdd]
+                  SingleTerm(
+                    MethodFactor(
+                      DesignatorAccess(
+                       Broj
+                       JEDAN
+                      ) [DesignatorAccess]
+                      NoneFactorMethodActParsOptional(
+                      ) [NoneFactorMethodActParsOptional]
+                    ) [MethodFactor]
+                  ) [SingleTerm]
+                ) [MultiExpressionTerm]
+              ) [MutliOptionalExpression]
+            ) [ReturnStatement]
+          ) [MultiStatementList]
+        ) [MethodDeclaration]
+      ) [MultiMethodDeclarationList]
+      MethodDeclaration(
+        MethodStart(
+          MethodTypeVoid(
+          ) [MethodTypeVoid]
+          MethodName(
+           mul
+          ) [MethodName]
+        ) [MethodStart]
+        MultiFormParsOptional(
+          FormPars(
+            ArrayFormPars(
+              Type(
+               int
+              ) [Type]
+             arr
+            ) [ArrayFormPars]
+            MultiFormParsList(
+              MultiFormParsList(
+                EmptyFormParsList(
+                ) [EmptyFormParsList]
+                NormalFormPars(
+                  Type(
+                   int
+                  ) [Type]
+                 index
+                ) [NormalFormPars]
+              ) [MultiFormParsList]
+              NormalFormPars(
+                Type(
+                 int
+                ) [Type]
+               b
+              ) [NormalFormPars]
+            ) [MultiFormParsList]
+          ) [FormPars]
+        ) [MultiFormParsOptional]
+        EmptyMethodVariableDeclarationList(
+        ) [EmptyMethodVariableDeclarationList]
+        MultiStatementList(
+          EmptyStatementList(
+          ) [EmptyStatementList]
+          SimpleStatement(
+            DesignatorValueAssign(
+              DesignatorArray(
+                ArrayStart(
+                 arr
+                ) [ArrayStart]
+                SingleExpression(
+                  SingleTerm(
+                    MethodFactor(
+                      SimpleDesignator(
+                       index
+                      ) [SimpleDesignator]
+                      NoneFactorMethodActParsOptional(
+                      ) [NoneFactorMethodActParsOptional]
+                    ) [MethodFactor]
+                  ) [SingleTerm]
+                ) [SingleExpression]
+              ) [DesignatorArray]
+              AssignopNoError(
+              ) [AssignopNoError]
+              SingleExpression(
+                MultiTerm(
+                  SingleTerm(
+                    MethodFactor(
+                      DesignatorArray(
+                        ArrayStart(
+                         arr
+                        ) [ArrayStart]
+                        SingleExpression(
+                          SingleTerm(
+                            MethodFactor(
+                              SimpleDesignator(
+                               index
+                              ) [SimpleDesignator]
+                              NoneFactorMethodActParsOptional(
+                              ) [NoneFactorMethodActParsOptional]
+                            ) [MethodFactor]
+                          ) [SingleTerm]
+                        ) [SingleExpression]
+                      ) [DesignatorArray]
+                      NoneFactorMethodActParsOptional(
+                      ) [NoneFactorMethodActParsOptional]
+                    ) [MethodFactor]
+                  ) [SingleTerm]
+                  MulopMul(
+                  ) [MulopMul]
+                  MethodFactor(
+                    SimpleDesignator(
+                     b
+                    ) [SimpleDesignator]
+                    NoneFactorMethodActParsOptional(
+                    ) [NoneFactorMethodActParsOptional]
+                  ) [MethodFactor]
+                ) [MultiTerm]
+              ) [SingleExpression]
+            ) [DesignatorValueAssign]
+          ) [SimpleStatement]
+        ) [MultiStatementList]
+      ) [MethodDeclaration]
+    ) [MultiMethodDeclarationList]
+    MethodDeclaration(
+      MethodStart(
+        MethodTypeVoid(
+        ) [MethodTypeVoid]
+        MethodName(
+         main
+        ) [MethodName]
+      ) [MethodStart]
+      EmptyFormParsOptional(
+      ) [EmptyFormParsOptional]
+      MultiMethodVariableDeclarationList(
+        MultiMethodVariableDeclarationList(
+          EmptyMethodVariableDeclarationList(
+          ) [EmptyMethodVariableDeclarationList]
+          VariableDeclarationNoError(
+            Type(
+             int
+            ) [Type]
+            SingleVariableDeclarationList(
+              NormalVariableDefinition(
+               bodovi
+              ) [NormalVariableDefinition]
+            ) [SingleVariableDeclarationList]
+          ) [VariableDeclarationNoError]
+        ) [MultiMethodVariableDeclarationList]
+        VariableDeclarationNoError(
+          Type(
+           Broj
+          ) [Type]
+          MultiVariableDeclarationList(
+            SingleVariableDeclarationList(
+              NormalVariableDefinition(
+               nula
+              ) [NormalVariableDefinition]
+            ) [SingleVariableDeclarationList]
+            NormalVariableDefinition(
+             jedan
+            ) [NormalVariableDefinition]
+          ) [MultiVariableDeclarationList]
+        ) [VariableDeclarationNoError]
+      ) [MultiMethodVariableDeclarationList]
+      MultiStatementList(
+        MultiStatementList(
+          MultiStatementList(
+            MultiStatementList(
+              MultiStatementList(
+                MultiStatementList(
+                  MultiStatementList(
+                    MultiStatementList(
+                      MultiStatementList(
+                        MultiStatementList(
+                          MultiStatementList(
+                            MultiStatementList(
+                              MultiStatementList(
+                                MultiStatementList(
+                                  MultiStatementList(
+                                    MultiStatementList(
+                                      MultiStatementList(
+                                        MultiStatementList(
+                                          MultiStatementList(
+                                            MultiStatementList(
+                                              MultiStatementList(
+                                                MultiStatementList(
+                                                  MultiStatementList(
+                                                    MultiStatementList(
+                                                      MultiStatementList(
+                                                        MultiStatementList(
+                                                          MultiStatementList(
+                                                            EmptyStatementList(
+                                                            ) [EmptyStatementList]
+                                                            SimpleStatement(
+                                                              DesignatorValueAssign(
+                                                                SimpleDesignator(
+                                                                 nula
+                                                                ) [SimpleDesignator]
+                                                                AssignopNoError(
+                                                                ) [AssignopNoError]
+                                                                SingleExpression(
+                                                                  SingleTerm(
+                                                                    MethodFactor(
+                                                                      DesignatorAccess(
+                                                                       Broj
+                                                                       NULA
+                                                                      ) [DesignatorAccess]
+                                                                      NoneFactorMethodActParsOptional(
+                                                                      ) [NoneFactorMethodActParsOptional]
+                                                                    ) [MethodFactor]
+                                                                  ) [SingleTerm]
+                                                                ) [SingleExpression]
+                                                              ) [DesignatorValueAssign]
+                                                            ) [SimpleStatement]
+                                                          ) [MultiStatementList]
+                                                          SimpleStatement(
+                                                            DesignatorValueAssign(
+                                                              SimpleDesignator(
+                                                               jedan
+                                                              ) [SimpleDesignator]
+                                                              AssignopNoError(
+                                                              ) [AssignopNoError]
+                                                              SingleExpression(
+                                                                SingleTerm(
+                                                                  MethodFactor(
+                                                                    DesignatorAccess(
+                                                                     Broj
+                                                                     JEDAN
+                                                                    ) [DesignatorAccess]
+                                                                    NoneFactorMethodActParsOptional(
+                                                                    ) [NoneFactorMethodActParsOptional]
+                                                                  ) [MethodFactor]
+                                                                ) [SingleTerm]
+                                                              ) [SingleExpression]
+                                                            ) [DesignatorValueAssign]
+                                                          ) [SimpleStatement]
+                                                        ) [MultiStatementList]
+                                                        SimpleStatement(
+                                                          DesignatorValueAssign(
+                                                            SimpleDesignator(
+                                                             bodovi
+                                                            ) [SimpleDesignator]
+                                                            AssignopNoError(
+                                                            ) [AssignopNoError]
+                                                            SingleExpression(
+                                                              SingleTerm(
+                                                                ConstantFactor(
+                                                                  NumConstantValue(
+                                                                   0
+                                                                  ) [NumConstantValue]
+                                                                ) [ConstantFactor]
+                                                              ) [SingleTerm]
+                                                            ) [SingleExpression]
+                                                          ) [DesignatorValueAssign]
+                                                        ) [SimpleStatement]
+                                                      ) [MultiStatementList]
+                                                      SimpleStatement(
+                                                        DesignatorIncrement(
+                                                          SimpleDesignator(
+                                                           bodovi
+                                                          ) [SimpleDesignator]
+                                                        ) [DesignatorIncrement]
+                                                      ) [SimpleStatement]
+                                                    ) [MultiStatementList]
+                                                    SimpleStatement(
+                                                      DesignatorValueAssign(
+                                                        SimpleDesignator(
+                                                         bodovi
+                                                        ) [SimpleDesignator]
+                                                        AssignopNoError(
+                                                        ) [AssignopNoError]
+                                                        MultiExpressionTerm(
+                                                          SingleExpression(
+                                                            SingleTerm(
+                                                              MethodFactor(
+                                                                SimpleDesignator(
+                                                                 bodovi
+                                                                ) [SimpleDesignator]
+                                                                NoneFactorMethodActParsOptional(
+                                                                ) [NoneFactorMethodActParsOptional]
+                                                              ) [MethodFactor]
+                                                            ) [SingleTerm]
+                                                          ) [SingleExpression]
+                                                          AddopAdd(
+                                                          ) [AddopAdd]
+                                                          SingleTerm(
+                                                            MethodFactor(
+                                                              SimpleDesignator(
+                                                               jedan
+                                                              ) [SimpleDesignator]
+                                                              NoneFactorMethodActParsOptional(
+                                                              ) [NoneFactorMethodActParsOptional]
+                                                            ) [MethodFactor]
+                                                          ) [SingleTerm]
+                                                        ) [MultiExpressionTerm]
+                                                      ) [DesignatorValueAssign]
+                                                    ) [SimpleStatement]
+                                                  ) [MultiStatementList]
+                                                  SimpleStatement(
+                                                    DesignatorValueAssign(
+                                                      SimpleDesignator(
+                                                       bodovi
+                                                      ) [SimpleDesignator]
+                                                      AssignopNoError(
+                                                      ) [AssignopNoError]
+                                                      SingleExpression(
+                                                        MultiTerm(
+                                                          SingleTerm(
+                                                            MethodFactor(
+                                                              SimpleDesignator(
+                                                               bodovi
+                                                              ) [SimpleDesignator]
+                                                              NoneFactorMethodActParsOptional(
+                                                              ) [NoneFactorMethodActParsOptional]
+                                                            ) [MethodFactor]
+                                                          ) [SingleTerm]
+                                                          MulopMul(
+                                                          ) [MulopMul]
+                                                          MethodFactor(
+                                                            SimpleDesignator(
+                                                             pet
+                                                            ) [SimpleDesignator]
+                                                            NoneFactorMethodActParsOptional(
+                                                            ) [NoneFactorMethodActParsOptional]
+                                                          ) [MethodFactor]
+                                                        ) [MultiTerm]
+                                                      ) [SingleExpression]
+                                                    ) [DesignatorValueAssign]
+                                                  ) [SimpleStatement]
+                                                ) [MultiStatementList]
+                                                SimpleStatement(
+                                                  DesignatorDecrement(
+                                                    SimpleDesignator(
+                                                     bodovi
+                                                    ) [SimpleDesignator]
+                                                  ) [DesignatorDecrement]
+                                                ) [SimpleStatement]
+                                              ) [MultiStatementList]
+                                              PrintStatementWithoutArguments(
+                                                SingleExpression(
+                                                  SingleTerm(
+                                                    MethodFactor(
+                                                      SimpleDesignator(
+                                                       bodovi
+                                                      ) [SimpleDesignator]
+                                                      NoneFactorMethodActParsOptional(
+                                                      ) [NoneFactorMethodActParsOptional]
+                                                    ) [MethodFactor]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpression]
+                                              ) [PrintStatementWithoutArguments]
+                                            ) [MultiStatementList]
+                                            SimpleStatement(
+                                              DesignatorValueAssign(
+                                                SimpleDesignator(
+                                                 niz
+                                                ) [SimpleDesignator]
+                                                AssignopNoError(
+                                                ) [AssignopNoError]
+                                                SingleExpression(
+                                                  SingleTerm(
+                                                    NewFactorArray(
+                                                      Type(
+                                                       int
+                                                      ) [Type]
+                                                      SingleExpression(
+                                                        SingleTerm(
+                                                          ConstantFactor(
+                                                            NumConstantValue(
+                                                             2
+                                                            ) [NumConstantValue]
+                                                          ) [ConstantFactor]
+                                                        ) [SingleTerm]
+                                                      ) [SingleExpression]
+                                                    ) [NewFactorArray]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpression]
+                                              ) [DesignatorValueAssign]
+                                            ) [SimpleStatement]
+                                          ) [MultiStatementList]
+                                          SimpleStatement(
+                                            DesignatorValueAssign(
+                                              DesignatorArray(
+                                                ArrayStart(
+                                                 niz
+                                                ) [ArrayStart]
+                                                SingleExpression(
+                                                  SingleTerm(
+                                                    MethodFactor(
+                                                      SimpleDesignator(
+                                                       nula
+                                                      ) [SimpleDesignator]
+                                                      NoneFactorMethodActParsOptional(
+                                                      ) [NoneFactorMethodActParsOptional]
+                                                    ) [MethodFactor]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpression]
+                                              ) [DesignatorArray]
+                                              AssignopNoError(
+                                              ) [AssignopNoError]
+                                              SingleExpression(
+                                                SingleTerm(
+                                                  MethodFactor(
+                                                    SimpleDesignator(
+                                                     pet
+                                                    ) [SimpleDesignator]
+                                                    NoneFactorMethodActParsOptional(
+                                                    ) [NoneFactorMethodActParsOptional]
+                                                  ) [MethodFactor]
+                                                ) [SingleTerm]
+                                              ) [SingleExpression]
+                                            ) [DesignatorValueAssign]
+                                          ) [SimpleStatement]
+                                        ) [MultiStatementList]
+                                        SimpleStatement(
+                                          DesignatorValueAssign(
+                                            DesignatorArray(
+                                              ArrayStart(
+                                               niz
+                                              ) [ArrayStart]
+                                              SingleExpression(
+                                                SingleTerm(
+                                                  ConstantFactor(
+                                                    NumConstantValue(
+                                                     1
+                                                    ) [NumConstantValue]
+                                                  ) [ConstantFactor]
+                                                ) [SingleTerm]
+                                              ) [SingleExpression]
+                                            ) [DesignatorArray]
+                                            AssignopNoError(
+                                            ) [AssignopNoError]
+                                            SingleExpression(
+                                              SingleTerm(
+                                                MethodFactor(
+                                                  DesignatorAccess(
+                                                   Broj
+                                                   DESET
+                                                  ) [DesignatorAccess]
+                                                  NoneFactorMethodActParsOptional(
+                                                  ) [NoneFactorMethodActParsOptional]
+                                                ) [MethodFactor]
+                                              ) [SingleTerm]
+                                            ) [SingleExpression]
+                                          ) [DesignatorValueAssign]
+                                        ) [SimpleStatement]
+                                      ) [MultiStatementList]
+                                      SimpleStatement(
+                                        DesignatorMethod(
+                                          SimpleDesignator(
+                                           mul
+                                          ) [SimpleDesignator]
+                                          MethodCheck(
+                                          ) [MethodCheck]
+                                          MultiActPars(
+                                            ActPars(
+                                              MultiActParsList(
+                                                MultiActParsList(
+                                                  SingleActParsList(
+                                                    ActParsDefinition(
+                                                      SingleExpression(
+                                                        SingleTerm(
+                                                          MethodFactor(
+                                                            SimpleDesignator(
+                                                             niz
+                                                            ) [SimpleDesignator]
+                                                            NoneFactorMethodActParsOptional(
+                                                            ) [NoneFactorMethodActParsOptional]
+                                                          ) [MethodFactor]
+                                                        ) [SingleTerm]
+                                                      ) [SingleExpression]
+                                                    ) [ActParsDefinition]
+                                                  ) [SingleActParsList]
+                                                  ActParsDefinition(
+                                                    SingleExpression(
+                                                      SingleTerm(
+                                                        MethodFactor(
+                                                          SimpleDesignator(
+                                                           inc
+                                                          ) [SimpleDesignator]
+                                                          SingleFactorMethodActParsOptional(
+                                                            FactorMethodCheck(
+                                                            ) [FactorMethodCheck]
+                                                            MultiActPars(
+                                                              ActPars(
+                                                                SingleActParsList(
+                                                                  ActParsDefinition(
+                                                                    SingleExpression(
+                                                                      SingleTerm(
+                                                                        ConstantFactor(
+                                                                          NumConstantValue(
+                                                                           0
+                                                                          ) [NumConstantValue]
+                                                                        ) [ConstantFactor]
+                                                                      ) [SingleTerm]
+                                                                    ) [SingleExpression]
+                                                                  ) [ActParsDefinition]
+                                                                ) [SingleActParsList]
+                                                              ) [ActPars]
+                                                            ) [MultiActPars]
+                                                          ) [SingleFactorMethodActParsOptional]
+                                                        ) [MethodFactor]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpression]
+                                                  ) [ActParsDefinition]
+                                                ) [MultiActParsList]
+                                                ActParsDefinition(
+                                                  SingleExpression(
+                                                    SingleTerm(
+                                                      ConstantFactor(
+                                                        NumConstantValue(
+                                                         2
+                                                        ) [NumConstantValue]
+                                                      ) [ConstantFactor]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpression]
+                                                ) [ActParsDefinition]
+                                              ) [MultiActParsList]
+                                            ) [ActPars]
+                                          ) [MultiActPars]
+                                        ) [DesignatorMethod]
+                                      ) [SimpleStatement]
+                                    ) [MultiStatementList]
+                                    SimpleStatement(
+                                      DesignatorMethod(
+                                        SimpleDesignator(
+                                         mul
+                                        ) [SimpleDesignator]
+                                        MethodCheck(
+                                        ) [MethodCheck]
+                                        MultiActPars(
+                                          ActPars(
+                                            MultiActParsList(
+                                              MultiActParsList(
+                                                SingleActParsList(
+                                                  ActParsDefinition(
+                                                    SingleExpression(
+                                                      SingleTerm(
+                                                        MethodFactor(
+                                                          SimpleDesignator(
+                                                           niz
+                                                          ) [SimpleDesignator]
+                                                          NoneFactorMethodActParsOptional(
+                                                          ) [NoneFactorMethodActParsOptional]
+                                                        ) [MethodFactor]
+                                                      ) [SingleTerm]
+                                                    ) [SingleExpression]
+                                                  ) [ActParsDefinition]
+                                                ) [SingleActParsList]
+                                                ActParsDefinition(
+                                                  SingleExpression(
+                                                    SingleTerm(
+                                                      MethodFactor(
+                                                        DesignatorAccess(
+                                                         Broj
+                                                         NULA
+                                                        ) [DesignatorAccess]
+                                                        NoneFactorMethodActParsOptional(
+                                                        ) [NoneFactorMethodActParsOptional]
+                                                      ) [MethodFactor]
+                                                    ) [SingleTerm]
+                                                  ) [SingleExpression]
+                                                ) [ActParsDefinition]
+                                              ) [MultiActParsList]
+                                              ActParsDefinition(
+                                                SingleExpression(
+                                                  SingleTerm(
+                                                    MethodFactor(
+                                                      SimpleDesignator(
+                                                       inc
+                                                      ) [SimpleDesignator]
+                                                      SingleFactorMethodActParsOptional(
+                                                        FactorMethodCheck(
+                                                        ) [FactorMethodCheck]
+                                                        MultiActPars(
+                                                          ActPars(
+                                                            SingleActParsList(
+                                                              ActParsDefinition(
+                                                                MultiExpressionTerm(
+                                                                  SingleExpression(
+                                                                    SingleTerm(
+                                                                      MethodFactor(
+                                                                        SimpleDesignator(
+                                                                         inc
+                                                                        ) [SimpleDesignator]
+                                                                        SingleFactorMethodActParsOptional(
+                                                                          FactorMethodCheck(
+                                                                          ) [FactorMethodCheck]
+                                                                          MultiActPars(
+                                                                            ActPars(
+                                                                              SingleActParsList(
+                                                                                ActParsDefinition(
+                                                                                  SingleExpression(
+                                                                                    SingleTerm(
+                                                                                      MethodFactor(
+                                                                                        DesignatorAccess(
+                                                                                         Broj
+                                                                                         JEDAN
+                                                                                        ) [DesignatorAccess]
+                                                                                        NoneFactorMethodActParsOptional(
+                                                                                        ) [NoneFactorMethodActParsOptional]
+                                                                                      ) [MethodFactor]
+                                                                                    ) [SingleTerm]
+                                                                                  ) [SingleExpression]
+                                                                                ) [ActParsDefinition]
+                                                                              ) [SingleActParsList]
+                                                                            ) [ActPars]
+                                                                          ) [MultiActPars]
+                                                                        ) [SingleFactorMethodActParsOptional]
+                                                                      ) [MethodFactor]
+                                                                    ) [SingleTerm]
+                                                                  ) [SingleExpression]
+                                                                  AddopAdd(
+                                                                  ) [AddopAdd]
+                                                                  SingleTerm(
+                                                                    ConstantFactor(
+                                                                      NumConstantValue(
+                                                                       1
+                                                                      ) [NumConstantValue]
+                                                                    ) [ConstantFactor]
+                                                                  ) [SingleTerm]
+                                                                ) [MultiExpressionTerm]
+                                                              ) [ActParsDefinition]
+                                                            ) [SingleActParsList]
+                                                          ) [ActPars]
+                                                        ) [MultiActPars]
+                                                      ) [SingleFactorMethodActParsOptional]
+                                                    ) [MethodFactor]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpression]
+                                              ) [ActParsDefinition]
+                                            ) [MultiActParsList]
+                                          ) [ActPars]
+                                        ) [MultiActPars]
+                                      ) [DesignatorMethod]
+                                    ) [SimpleStatement]
+                                  ) [MultiStatementList]
+                                  SimpleStatement(
+                                    DesignatorValueAssign(
+                                      SimpleDesignator(
+                                       bodovi
+                                      ) [SimpleDesignator]
+                                      AssignopNoError(
+                                      ) [AssignopNoError]
+                                      SingleExpression(
+                                        MultiTerm(
+                                          SingleTerm(
+                                            MethodFactor(
+                                              DesignatorArray(
+                                                ArrayStart(
+                                                 niz
+                                                ) [ArrayStart]
+                                                SingleExpression(
+                                                  SingleTerm(
+                                                    ConstantFactor(
+                                                      NumConstantValue(
+                                                       1
+                                                      ) [NumConstantValue]
+                                                    ) [ConstantFactor]
+                                                  ) [SingleTerm]
+                                                ) [SingleExpression]
+                                              ) [DesignatorArray]
+                                              NoneFactorMethodActParsOptional(
+                                              ) [NoneFactorMethodActParsOptional]
+                                            ) [MethodFactor]
+                                          ) [SingleTerm]
+                                          MulopDiv(
+                                          ) [MulopDiv]
+                                          MethodFactor(
+                                            DesignatorArray(
+                                              ArrayStart(
+                                               niz
+                                              ) [ArrayStart]
+                                              SingleExpression(
+                                                SingleTerm(
+                                                  ConstantFactor(
+                                                    NumConstantValue(
+                                                     0
+                                                    ) [NumConstantValue]
+                                                  ) [ConstantFactor]
+                                                ) [SingleTerm]
+                                              ) [SingleExpression]
+                                            ) [DesignatorArray]
+                                            NoneFactorMethodActParsOptional(
+                                            ) [NoneFactorMethodActParsOptional]
+                                          ) [MethodFactor]
+                                        ) [MultiTerm]
+                                      ) [SingleExpression]
+                                    ) [DesignatorValueAssign]
+                                  ) [SimpleStatement]
+                                ) [MultiStatementList]
+                                PrintStatementWithoutArguments(
+                                  SingleExpression(
+                                    SingleTerm(
+                                      MethodFactor(
+                                        SimpleDesignator(
+                                         bodovi
+                                        ) [SimpleDesignator]
+                                        NoneFactorMethodActParsOptional(
+                                        ) [NoneFactorMethodActParsOptional]
+                                      ) [MethodFactor]
+                                    ) [SingleTerm]
+                                  ) [SingleExpression]
+                                ) [PrintStatementWithoutArguments]
+                              ) [MultiStatementList]
+                              PrintStatementWithoutArguments(
+                                SingleExpression(
+                                  SingleTerm(
+                                    MethodFactor(
+                                      DesignatorArray(
+                                        ArrayStart(
+                                         niz
+                                        ) [ArrayStart]
+                                        SingleExpression(
+                                          SingleTerm(
+                                            MethodFactor(
+                                              DesignatorAccess(
+                                               Broj
+                                               JEDAN
+                                              ) [DesignatorAccess]
+                                              NoneFactorMethodActParsOptional(
+                                              ) [NoneFactorMethodActParsOptional]
+                                            ) [MethodFactor]
+                                          ) [SingleTerm]
+                                        ) [SingleExpression]
+                                      ) [DesignatorArray]
+                                      NoneFactorMethodActParsOptional(
+                                      ) [NoneFactorMethodActParsOptional]
+                                    ) [MethodFactor]
+                                  ) [SingleTerm]
+                                ) [SingleExpression]
+                              ) [PrintStatementWithoutArguments]
+                            ) [MultiStatementList]
+                            SimpleStatement(
+                              DesignatorValueAssign(
+                                SimpleDesignator(
+                                 nizch
+                                ) [SimpleDesignator]
+                                AssignopNoError(
+                                ) [AssignopNoError]
+                                SingleExpression(
+                                  SingleTerm(
+                                    NewFactorArray(
+                                      Type(
+                                       char
+                                      ) [Type]
+                                      SingleExpression(
+                                        SingleTerm(
+                                          ConstantFactor(
+                                            NumConstantValue(
+                                             3
+                                            ) [NumConstantValue]
+                                          ) [ConstantFactor]
+                                        ) [SingleTerm]
+                                      ) [SingleExpression]
+                                    ) [NewFactorArray]
+                                  ) [SingleTerm]
+                                ) [SingleExpression]
+                              ) [DesignatorValueAssign]
+                            ) [SimpleStatement]
+                          ) [MultiStatementList]
+                          SimpleStatement(
+                            DesignatorValueAssign(
+                              DesignatorArray(
+                                ArrayStart(
+                                 nizch
+                                ) [ArrayStart]
+                                SingleExpression(
+                                  SingleTerm(
+                                    ConstantFactor(
+                                      NumConstantValue(
+                                       0
+                                      ) [NumConstantValue]
+                                    ) [ConstantFactor]
+                                  ) [SingleTerm]
+                                ) [SingleExpression]
+                              ) [DesignatorArray]
+                              AssignopNoError(
+                              ) [AssignopNoError]
+                              SingleExpression(
+                                SingleTerm(
+                                  ConstantFactor(
+                                    CharConstantValue(
+                                     'a'
+                                    ) [CharConstantValue]
+                                  ) [ConstantFactor]
+                                ) [SingleTerm]
+                              ) [SingleExpression]
+                            ) [DesignatorValueAssign]
+                          ) [SimpleStatement]
+                        ) [MultiStatementList]
+                        SimpleStatement(
+                          DesignatorValueAssign(
+                            DesignatorArray(
+                              ArrayStart(
+                               nizch
+                              ) [ArrayStart]
+                              SingleExpression(
+                                SingleTerm(
+                                  MethodFactor(
+                                    SimpleDesignator(
+                                     jedan
+                                    ) [SimpleDesignator]
+                                    NoneFactorMethodActParsOptional(
+                                    ) [NoneFactorMethodActParsOptional]
+                                  ) [MethodFactor]
+                                ) [SingleTerm]
+                              ) [SingleExpression]
+                            ) [DesignatorArray]
+                            AssignopNoError(
+                            ) [AssignopNoError]
+                            SingleExpression(
+                              SingleTerm(
+                                ConstantFactor(
+                                  CharConstantValue(
+                                   'b'
+                                  ) [CharConstantValue]
+                                ) [ConstantFactor]
+                              ) [SingleTerm]
+                            ) [SingleExpression]
+                          ) [DesignatorValueAssign]
+                        ) [SimpleStatement]
+                      ) [MultiStatementList]
+                      SimpleStatement(
+                        DesignatorValueAssign(
+                          DesignatorArray(
+                            ArrayStart(
+                             nizch
+                            ) [ArrayStart]
+                            MultiExpressionTerm(
+                              SingleExpression(
+                                SingleTerm(
+                                  MethodFactor(
+                                    SimpleDesignator(
+                                     pet
+                                    ) [SimpleDesignator]
+                                    NoneFactorMethodActParsOptional(
+                                    ) [NoneFactorMethodActParsOptional]
+                                  ) [MethodFactor]
+                                ) [SingleTerm]
+                              ) [SingleExpression]
+                              AddopSub(
+                              ) [AddopSub]
+                              SingleTerm(
+                                ConstantFactor(
+                                  NumConstantValue(
+                                   3
+                                  ) [NumConstantValue]
+                                ) [ConstantFactor]
+                              ) [SingleTerm]
+                            ) [MultiExpressionTerm]
+                          ) [DesignatorArray]
+                          AssignopNoError(
+                          ) [AssignopNoError]
+                          SingleExpression(
+                            SingleTerm(
+                              ConstantFactor(
+                                CharConstantValue(
+                                 'c'
+                                ) [CharConstantValue]
+                              ) [ConstantFactor]
+                            ) [SingleTerm]
+                          ) [SingleExpression]
+                        ) [DesignatorValueAssign]
+                      ) [SimpleStatement]
+                    ) [MultiStatementList]
+                    PrintStatementWithoutArguments(
+                      SingleExpression(
+                        SingleTerm(
+                          MethodFactor(
+                            DesignatorArray(
+                              ArrayStart(
+                               nizch
+                              ) [ArrayStart]
+                              SingleExpression(
+                                SingleTerm(
+                                  MethodFactor(
+                                    SimpleDesignator(
+                                     inc
+                                    ) [SimpleDesignator]
+                                    SingleFactorMethodActParsOptional(
+                                      FactorMethodCheck(
+                                      ) [FactorMethodCheck]
+                                      MultiActPars(
+                                        ActPars(
+                                          SingleActParsList(
+                                            ActParsDefinition(
+                                              SingleExpression(
+                                                SingleTerm(
+                                                  ConstantFactor(
+                                                    NumConstantValue(
+                                                     0
+                                                    ) [NumConstantValue]
+                                                  ) [ConstantFactor]
+                                                ) [SingleTerm]
+                                              ) [SingleExpression]
+                                            ) [ActParsDefinition]
+                                          ) [SingleActParsList]
+                                        ) [ActPars]
+                                      ) [MultiActPars]
+                                    ) [SingleFactorMethodActParsOptional]
+                                  ) [MethodFactor]
+                                ) [SingleTerm]
+                              ) [SingleExpression]
+                            ) [DesignatorArray]
+                            NoneFactorMethodActParsOptional(
+                            ) [NoneFactorMethodActParsOptional]
+                          ) [MethodFactor]
+                        ) [SingleTerm]
+                      ) [SingleExpression]
+                    ) [PrintStatementWithoutArguments]
+                  ) [MultiStatementList]
+                  PrintStatementWithoutArguments(
+                    SingleExpression(
+                      SingleTerm(
+                        MethodFactor(
+                          DesignatorArray(
+                            ArrayStart(
+                             nizch
+                            ) [ArrayStart]
+                            SingleExpression(
+                              MultiTerm(
+                                SingleTerm(
+                                  MethodFactor(
+                                    SimpleDesignator(
+                                     jedan
+                                    ) [SimpleDesignator]
+                                    NoneFactorMethodActParsOptional(
+                                    ) [NoneFactorMethodActParsOptional]
+                                  ) [MethodFactor]
+                                ) [SingleTerm]
+                                MulopMul(
+                                ) [MulopMul]
+                                ConstantFactor(
+                                  NumConstantValue(
+                                   2
+                                  ) [NumConstantValue]
+                                ) [ConstantFactor]
+                              ) [MultiTerm]
+                            ) [SingleExpression]
+                          ) [DesignatorArray]
+                          NoneFactorMethodActParsOptional(
+                          ) [NoneFactorMethodActParsOptional]
+                        ) [MethodFactor]
+                      ) [SingleTerm]
+                    ) [SingleExpression]
+                  ) [PrintStatementWithoutArguments]
+                ) [MultiStatementList]
+                SimpleStatement(
+                  DesignatorValueAssign(
+                    SimpleDesignator(
+                     bodovi
+                    ) [SimpleDesignator]
+                    AssignopNoError(
+                    ) [AssignopNoError]
+                    MultiExpressionTerm(
+                      SingleExpression(
+                        SingleTerm(
+                          MethodFactor(
+                            SimpleDesignator(
+                             bodovi
+                            ) [SimpleDesignator]
+                            NoneFactorMethodActParsOptional(
+                            ) [NoneFactorMethodActParsOptional]
+                          ) [MethodFactor]
+                        ) [SingleTerm]
+                      ) [SingleExpression]
+                      AddopAdd(
+                      ) [AddopAdd]
+                      SingleTerm(
+                        ExpressionFactor(
+                          MultiExpressionTerm(
+                            MultiExpressionTerm(
+                              SingleExpression(
+                                MultiTerm(
+                                  SingleTerm(
+                                    ExpressionFactor(
+                                      MultiExpressionTerm(
+                                        SingleExpression(
+                                          MultiTerm(
+                                            SingleTerm(
+                                              MethodFactor(
+                                                SimpleDesignator(
+                                                 pet
+                                                ) [SimpleDesignator]
+                                                NoneFactorMethodActParsOptional(
+                                                ) [NoneFactorMethodActParsOptional]
+                                              ) [MethodFactor]
+                                            ) [SingleTerm]
+                                            MulopMul(
+                                            ) [MulopMul]
+                                            MethodFactor(
+                                              SimpleDesignator(
+                                               jedan
+                                              ) [SimpleDesignator]
+                                              NoneFactorMethodActParsOptional(
+                                              ) [NoneFactorMethodActParsOptional]
+                                            ) [MethodFactor]
+                                          ) [MultiTerm]
+                                        ) [SingleExpression]
+                                        AddopSub(
+                                        ) [AddopSub]
+                                        SingleTerm(
+                                          ConstantFactor(
+                                            NumConstantValue(
+                                             1
+                                            ) [NumConstantValue]
+                                          ) [ConstantFactor]
+                                        ) [SingleTerm]
+                                      ) [MultiExpressionTerm]
+                                    ) [ExpressionFactor]
+                                  ) [SingleTerm]
+                                  MulopMul(
+                                  ) [MulopMul]
+                                  MethodFactor(
+                                    SimpleDesignator(
+                                     inc
+                                    ) [SimpleDesignator]
+                                    SingleFactorMethodActParsOptional(
+                                      FactorMethodCheck(
+                                      ) [FactorMethodCheck]
+                                      MultiActPars(
+                                        ActPars(
+                                          SingleActParsList(
+                                            ActParsDefinition(
+                                              SingleExpression(
+                                                SingleTerm(
+                                                  MethodFactor(
+                                                    DesignatorAccess(
+                                                     Broj
+                                                     JEDAN
+                                                    ) [DesignatorAccess]
+                                                    NoneFactorMethodActParsOptional(
+                                                    ) [NoneFactorMethodActParsOptional]
+                                                  ) [MethodFactor]
+                                                ) [SingleTerm]
+                                              ) [SingleExpression]
+                                            ) [ActParsDefinition]
+                                          ) [SingleActParsList]
+                                        ) [ActPars]
+                                      ) [MultiActPars]
+                                    ) [SingleFactorMethodActParsOptional]
+                                  ) [MethodFactor]
+                                ) [MultiTerm]
+                              ) [SingleExpression]
+                              AddopSub(
+                              ) [AddopSub]
+                              SingleTerm(
+                                ExpressionFactor(
+                                  MultiExpressionTerm(
+                                    MultiExpressionTerm(
+                                      SingleExpression(
+                                        MultiTerm(
+                                          SingleTerm(
+                                            ConstantFactor(
+                                              NumConstantValue(
+                                               3
+                                              ) [NumConstantValue]
+                                            ) [ConstantFactor]
+                                          ) [SingleTerm]
+                                          MulopMod(
+                                          ) [MulopMod]
+                                          ConstantFactor(
+                                            NumConstantValue(
+                                             2
+                                            ) [NumConstantValue]
+                                          ) [ConstantFactor]
+                                        ) [MultiTerm]
+                                      ) [SingleExpression]
+                                      AddopAdd(
+                                      ) [AddopAdd]
+                                      MultiTerm(
+                                        SingleTerm(
+                                          ConstantFactor(
+                                            NumConstantValue(
+                                             3
+                                            ) [NumConstantValue]
+                                          ) [ConstantFactor]
+                                        ) [SingleTerm]
+                                        MulopMul(
+                                        ) [MulopMul]
+                                        ConstantFactor(
+                                          NumConstantValue(
+                                           2
+                                          ) [NumConstantValue]
+                                        ) [ConstantFactor]
+                                      ) [MultiTerm]
+                                    ) [MultiExpressionTerm]
+                                    AddopSub(
+                                    ) [AddopSub]
+                                    SingleTerm(
+                                      ConstantFactor(
+                                        NumConstantValue(
+                                         3
+                                        ) [NumConstantValue]
+                                      ) [ConstantFactor]
+                                    ) [SingleTerm]
+                                  ) [MultiExpressionTerm]
+                                ) [ExpressionFactor]
+                              ) [SingleTerm]
+                            ) [MultiExpressionTerm]
+                            AddopSub(
+                            ) [AddopSub]
+                            MultiTerm(
+                              SingleTerm(
+                                MethodFactor(
+                                  SimpleDesignator(
+                                   inc
+                                  ) [SimpleDesignator]
+                                  SingleFactorMethodActParsOptional(
+                                    FactorMethodCheck(
+                                    ) [FactorMethodCheck]
+                                    MultiActPars(
+                                      ActPars(
+                                        SingleActParsList(
+                                          ActParsDefinition(
+                                            SingleExpression(
+                                              SingleTerm(
+                                                MethodFactor(
+                                                  DesignatorAccess(
+                                                   Broj
+                                                   NULA
+                                                  ) [DesignatorAccess]
+                                                  NoneFactorMethodActParsOptional(
+                                                  ) [NoneFactorMethodActParsOptional]
+                                                ) [MethodFactor]
+                                              ) [SingleTerm]
+                                            ) [SingleExpression]
+                                          ) [ActParsDefinition]
+                                        ) [SingleActParsList]
+                                      ) [ActPars]
+                                    ) [MultiActPars]
+                                  ) [SingleFactorMethodActParsOptional]
+                                ) [MethodFactor]
+                              ) [SingleTerm]
+                              MulopMul(
+                              ) [MulopMul]
+                              ConstantFactor(
+                                NumConstantValue(
+                                 0
+                                ) [NumConstantValue]
+                              ) [ConstantFactor]
+                            ) [MultiTerm]
+                          ) [MultiExpressionTerm]
+                        ) [ExpressionFactor]
+                      ) [SingleTerm]
+                    ) [MultiExpressionTerm]
+                  ) [DesignatorValueAssign]
+                ) [SimpleStatement]
+              ) [MultiStatementList]
+              PrintStatementWithoutArguments(
+                SingleExpression(
+                  SingleTerm(
+                    MethodFactor(
+                      SimpleDesignator(
+                       bodovi
+                      ) [SimpleDesignator]
+                      NoneFactorMethodActParsOptional(
+                      ) [NoneFactorMethodActParsOptional]
+                    ) [MethodFactor]
+                  ) [SingleTerm]
+                ) [SingleExpression]
+              ) [PrintStatementWithoutArguments]
+            ) [MultiStatementList]
+            ReadStatement(
+              SimpleDesignator(
+               bodovi
+              ) [SimpleDesignator]
+            ) [ReadStatement]
+          ) [MultiStatementList]
+          SimpleStatement(
+            DesignatorValueAssign(
+              SimpleDesignator(
+               bodovi
+              ) [SimpleDesignator]
+              AssignopNoError(
+              ) [AssignopNoError]
+              SingleExpression(
+                SingleTerm(
+                  MethodFactor(
+                    SimpleDesignator(
+                     inc
+                    ) [SimpleDesignator]
+                    SingleFactorMethodActParsOptional(
+                      FactorMethodCheck(
+                      ) [FactorMethodCheck]
+                      MultiActPars(
+                        ActPars(
+                          SingleActParsList(
+                            ActParsDefinition(
+                              SingleExpression(
+                                SingleTerm(
+                                  MethodFactor(
+                                    SimpleDesignator(
+                                     bodovi
+                                    ) [SimpleDesignator]
+                                    NoneFactorMethodActParsOptional(
+                                    ) [NoneFactorMethodActParsOptional]
+                                  ) [MethodFactor]
+                                ) [SingleTerm]
+                              ) [SingleExpression]
+                            ) [ActParsDefinition]
+                          ) [SingleActParsList]
+                        ) [ActPars]
+                      ) [MultiActPars]
+                    ) [SingleFactorMethodActParsOptional]
+                  ) [MethodFactor]
+                ) [SingleTerm]
+              ) [SingleExpression]
+            ) [DesignatorValueAssign]
+          ) [SimpleStatement]
+        ) [MultiStatementList]
+        PrintStatementWithoutArguments(
+          SingleExpression(
+            SingleTerm(
+              MethodFactor(
+                SimpleDesignator(
+                 bodovi
+                ) [SimpleDesignator]
+                NoneFactorMethodActParsOptional(
+                ) [NoneFactorMethodActParsOptional]
+              ) [MethodFactor]
+            ) [SingleTerm]
+          ) [SingleExpression]
+        ) [PrintStatementWithoutArguments]
+      ) [MultiStatementList]
+    ) [MethodDeclaration]
+  ) [MultiMethodDeclarationList]
+) [Program]
+INFO  23:03:41,023 - ===================================
+INFO  23:03:41,062 - Parsiranje uspesno zavrseno
